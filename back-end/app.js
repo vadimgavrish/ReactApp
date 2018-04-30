@@ -34,12 +34,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: "cats" }));
 
-app.use(restify.CORS({
-	origins: ['http://coinbankr.com'],
-	credentials: true,
-	headers: ['x-foo']
-}));
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/loginAttempt', loginRouter);
