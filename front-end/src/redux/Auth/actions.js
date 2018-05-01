@@ -33,7 +33,7 @@ function getAttempt() {
 }
 
 function postAttempt() {
-  fetch('/users', {
+  fetch('/loginAttempt', {
     method: 'POST'
   })
   .then(res => res.json())

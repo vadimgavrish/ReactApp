@@ -10,7 +10,7 @@ router.post('/', function(req, res, next) {
       if (error) throw error;
 
       if (results.length === 0) {
-        res.send(JSON.stringify('err'));
+        res.send(JSON.stringify('User not found'));
       } else {
         // set cookie 🍪
         res.send(JSON.stringify(results[0].UserName));
