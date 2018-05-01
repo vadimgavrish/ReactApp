@@ -25,6 +25,22 @@ function fetchAttempt(cred) {
   .catch(err => alert(err));
 }
 
+function getAttempt() {
+  fetch('/users')
+    .then(res => res.json())
+    .then(res => console.log('Get! ' + res))
+    .catch(err => console.log(err));
+}
+
+function postAttempt() {
+  fetch('/users', {
+    method: 'POST'
+  })
+  .then(res => res.json())
+  .then(res => console.log('Post! ' + res))
+  .catch(err => console.log(err))
+}
+
 export const loginSuccess = (val) => ({
   type: 'LOGIN_SUCCESS',
   payload: val,
@@ -43,7 +59,8 @@ export const logout = () => ({
 });
 
 export const loginAttempt = (val) => {
-  fetchAttempt(val);
+  getAttempt();
+  postAttempt();
   return {
     type: LOGIN_IN_ATTEMPT,
   };
